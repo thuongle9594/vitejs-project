@@ -1,0 +1,24 @@
+.list-menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* justify-items: center; */
+  padding: 0;
+}
+
+.list-menu .item {
+  list-style: none;
+  padding: 20px;
+  font-weight: 500;
+  color: black;
+  font-size: 25px;
+}
+
+.list-menu .item:hover {
+  color: green;
+}
+
+.linkCss:hover {
+  list-style: none;
+  text-decoration: none;
+}

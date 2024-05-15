@@ -1,0 +1,96 @@
+@use 'common'; // variable css common
+@use 'pikachu'; // animation pikachu
+%background-share {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.content {
+  padding: common.$padding50;
+  @extend %background-share;
+  border-radius: 4px;
+  z-index: 1001;
+}
+
+// nesting css
+.page-content {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(121, 9, 80, 0.7693671218487395) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  // css here
+  h3 {
+    text-transform: uppercase;
+    color: #ffffff;
+    text-align: center;
+    font-style: italic;
+    padding-top: common.$pt_15;
+  }
+  h3:hover {
+    color: red;
+  }
+  .table-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: common.$pt_15;
+    .block_img {
+      border: 1px solid red;
+      width: 150px;
+      height: 500px;
+      background-color: mediumvioletred;
+    }
+    .right {
+      background: #deb29a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      // pikachu
+      @include pikachu.pikachu();
+      .right {
+        transform: rotate(-50deg) scalex(-1) translate(-15vmin, 14vmin);
+      }
+    }
+    .right:hover,
+    .left:hover {
+      background: radial-gradient(
+        circle,
+        rgba(238, 174, 202, 1) 0%,
+        rgba(148, 187, 233, 1) 100%
+      );
+    }
+    // .left {
+    //   margin-left: 20px;
+    // }
+
+    .ant-table-content {
+      color: common.$color-text;
+      font-weight: common.$font_w500;
+      font-style: italic;
+      background: linear-gradient(
+        0deg,
+        rgba(34, 193, 195, 1) 0%,
+        rgba(243, 253, 45, 0.8001794467787114) 100%
+      );
+
+      // overide css antd
+      .ant-table-thead {
+        tr {
+          th {
+            background: radial-gradient(
+              circle,
+              rgba(63, 94, 251, 1) 0%,
+              rgba(252, 70, 107, 1) 100%
+            );
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .modal-content {
+  }
+}
